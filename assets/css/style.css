@@ -1,0 +1,242 @@
+/* font link
+ */
+/* Poppins & Dancing Script */
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins&display=swap");
+
+/* Dosis & Bitter */
+
+@import url("https://fonts.googleapis.com/css2?family=Bitter&family=Dosis&display=swap");
+
+/* Abril Fatface, Oswald & Karla */
+
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Karla&family=Oswald&display=swap");
+
+/* Josefin Sans & Crimson Text  */
+
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text&family=Josefin+Sans&display=swap");
+
+@font-face {
+  font-family: "merry_christmas_flakeregular";
+  src: url("../font/merrychristmasflake-webfont.woff2") format("woff2"),
+    url("../font/merrychristmasflake-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Global variables. if used for as value do this: var(--variable-name) */
+:root {
+  /* fonts */
+  --special-font: "merry_christmas_flakeregular", sans-serif;
+
+  --title-font: "Bitter", serif;
+  --main-font: "Dosis", sans-serif;
+
+  --text: #ffffff;
+  --main-1-bg: linear-gradient(#007536, #FFF);
+  --main-2-bg: linear-gradient(#801105, #FFF);
+  --main-1: #007536;
+  --main-2: #801105;
+  --secondary: #000000;
+  --shadow: 2px 2px 4px rgb(0, 0, 0);
+
+  /* Utility */
+  --small-boxshadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+  --boxshadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  --border-width: 5px;
+  --border-style: solid;
+  --border-image: linear-gradient(to right, #ae8625, #f7ef8a, #FFF, #FFF, #FFF, #d2ac47, #edc967) 1;
+  --border-image-slice: 1;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+body {
+  font-family: var(--main-font);
+  font-weight: 200;
+  letter-spacing: 2px;
+  color: var(--text);
+  height: 100%;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  padding: 0;
+}
+
+main>section {
+  height: 100vh;
+  background-image: var(--main-1-bg);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+main>section:nth-child(2n) {
+  background-image: var(--main-2-bg);
+}
+
+section div h1 {
+  font-size: 5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--title-font);
+  letter-spacing: 2px;
+  color: var(--text);
+  text-shadow: var(--shadow);
+}
+
+/* text color variable used for background color */
+.color-text-bg {
+  background-image: var(--text);
+}
+
+/* text color variable used for text color */
+.color-text-text {
+  color: var(--text);
+}
+
+/* background color variable used for background */
+.color-bg-bg {
+  background-image: var(--main-1-bg);
+}
+
+/* background color variable used for text */
+.color-bg-text {
+  color: var(--main-1);
+}
+
+/* primary color variable used for background */
+.color-pr-bg {
+  background-image: var(--main-2-bg);
+}
+
+/* primary color variable used for text */
+.color-pr-text {
+  color: var(--main-2);
+}
+
+/* secondary color variable used for background */
+.color-sc-bg {
+  background-color: var(--secondary);
+}
+
+/* secondary color variable used for text */
+.color-sc-text {
+  color: var(--secondary);
+}
+
+/* accent color variable used for background */
+.color-ac-bg {
+  background-color: var(--accent);
+}
+
+/* accent color variable used for text */
+.color-ac-text {
+  color: var(--accent);
+}
+
+/* navigation bar */
+
+.nav-border {
+  background-image: linear-gradient(to right, #ae8625, #f7ef8a, #FFF, #FFF, #FFF, #d2ac47, #edc967);
+  border-radius: 5px;
+  padding: 4px;
+  margin-left: 4px;
+}
+
+.nav-link {
+  background-color: var(--main-1);
+  color: white;
+
+  font-weight: 600;
+  border-radius: 5px !important;
+  padding: 0.4rem 0.6rem;
+}
+
+.nav-pills .nav-link.active {
+  background-color: var(--main-2);
+}
+
+.nav-pills .nav-link:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+.nav-pills .nav-link:focus {
+  text-decoration: none;
+  color: white;
+}
+
+#title {
+  font-size: 1.7rem;
+}
+
+#snowfall {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 9999999;
+  pointer-events: none;
+}
+
+.snowflake {
+  width: 5px;
+  height: 5px;
+  filter: blur(1px);
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1;
+  background-color: #def7ff;
+  box-shadow: 0 0 5px 5px #b6edff;
+  animation: snowfall 1s infinite linear forwards;
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translateY(1vh) scale(1);
+  }
+
+  25% {
+    transform: translateY(220vh) scale(0.3);
+  }
+
+  100% {
+    transform: translateY(110vh) scale(0.3);
+  }
+}
+
+
+
+@media screen and (max-width: 425px) {
+  .cta-heading {
+    font-size: 2.6rem;
+  }
+
+  .time {
+    font-size: 1.5rem;
+  }
+
+  .text {
+    padding-top: 0.3rem;
+    font-size: 1.2rem;
+
+  }
+
+  .icon-timer {
+    font-size: 1.5rem;
+  }
+}
